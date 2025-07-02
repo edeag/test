@@ -8,12 +8,14 @@ final readonly class Entertainment {
 	public function __construct(
 		private int $id,
 		private int $type,
-		private DateTime $releaseDate,
+		private string $releaseDate,
 		private bool $isFinal,
 		private string $name,
 		private string $description,
-		private int $categoryId
+		private int $categoryId,
+		private int $platformId
 	) {
+
 
 	}
 
@@ -27,7 +29,7 @@ final readonly class Entertainment {
 		return $this->type;
 	}
 
-	public function releaseDate(): DateTime
+	public function releaseDate(): string
 	{
 		return $this->releaseDate;
 	}
@@ -50,5 +52,10 @@ final readonly class Entertainment {
 	public function categoryId(): int
 	{
 		return $this->categoryId;
+	}
+
+	public function platformId(): int
+	{
+		return $this->platformId;
 	}
 }

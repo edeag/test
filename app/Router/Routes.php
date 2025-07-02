@@ -1,3 +1,27 @@
+<?php
+
+use AppRouterRoute;
+use srcControllerEntertainmentEntertainmentListController;
+use srcControllerEntertainmentEntertainmentGetController;
+use srcControllerAdminEntertainmentEntertainmentCreateController;
+use srcControllerAdminEntertainmentEntertainmentUpdateController;
+use srcControllerAdminEntertainmentEntertainmentDeleteController;
+
+$routes = [];
+
+// Public Routes
+$routes[] = new Route('GET', '/entertainments', EntertainmentListController::class, 'start');
+$routes[] = new Route('GET', '/entertainments/{id}', EntertainmentGetController::class, 'start');
+
+// Admin Routes
+$routes[] = new Route('GET', '/admin/entertainments', srcControllerAdminEntertainmentEntertainmentListController::class, 'start');
+$routes[] = new Route('GET', '/admin/entertainments/create', EntertainmentCreateController::class, 'start');
+$routes[] = new Route('POST', '/admin/entertainments/create', EntertainmentCreateController::class, 'start');
+$routes[] = new Route('GET', '/admin/entertainments/edit/{id}', EntertainmentUpdateController::class, 'start');
+$routes[] = new Route('POST', '/admin/entertainments/edit/{id}', EntertainmentUpdateController::class, 'start');
+$routes[] = new Route('POST', '/admin/entertainments/delete/{id}', EntertainmentDeleteController::class, 'start');
+
+return $routes;
 <?php 
 
 include_once "Route.php";
